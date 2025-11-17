@@ -714,7 +714,7 @@
       <div class="editor-header">
         <div class="editor-title-group">
           <div class="editor-date" id="editorDateLabel">Select a date to begin</div>
-          <div class="editor-subtitle">Each day can hold multiple soft vents & reflections.</div>
+          <div class="editor-subtitle"></div>
         </div>
         <div class="editor-actions">
           <span id="saveStatus" class="save-status">Offline – not saved</span>
@@ -783,8 +783,6 @@
 
         <div class="editor-footer">
           <div>
-            <span>Prompt: </span>
-            <span class="pill-link" id="promptIdea">Give me something to write about</span>
           </div>
           <div id="entryMetaLabel"></div>
         </div>
@@ -1266,7 +1264,7 @@
     renderEntryTabs();
     loadCurrentEntryIntoEditor();
     highlightActiveDay();
-    setSaveStatus("Ready – changes will be saved to journal.json");
+    setSaveStatus("Connected");
   }
 
   async function saveCurrentDay() {
@@ -1289,7 +1287,7 @@
 
     try {
       await saveJournalDataToDrive();
-      setSaveStatus("Saved to journal.json");
+      setSaveStatus("Saved to Drive");
       renderDaysList();
       highlightActiveDay();
     } catch (err) {
